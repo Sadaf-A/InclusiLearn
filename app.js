@@ -26,6 +26,10 @@ app.get('/login', (req, res) => {
     res.render('signup', { check: 'signup', name: "new"});
  })
 
+ app.get('/homepage', (req, res) => {
+    res.render('homepage', { check: 'homepage', name: "new"});
+    })
+
 
 // Listen on Port 5000
 app.listen(port, () => console.info(`App listening on port ${port}`))
