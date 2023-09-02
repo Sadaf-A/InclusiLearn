@@ -36,6 +36,18 @@ app.get('/login', (req, res) => {
             const name = "new"; 
             res.render('afterSearch', { search: searchValue, name: name });
         });
+
+        app.get('/messageList', (req, res) => {
+            res.render('messageList', { check: 'messageList', name: "new"});
+            })
+        
+            app.get('/myPost', (req, res) => {
+                res.render('myPost', { check: 'myPost', name: "new"});
+                })
+
+app.get('/profile', (req, res) => {
+    res.render('profile', { check: 'profile', name: "new"});
+    })
         
         
 
