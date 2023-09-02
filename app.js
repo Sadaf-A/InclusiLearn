@@ -10,9 +10,6 @@ app.set('views', './views');
 app.set('view engine', 'ejs');
 
 // Navigation
-app.get('', (req, res) => {
-    res.render('index', { text: 'Hey' })
-})
 
 app.get('/about', (req, res) => {
    res.render('about', { check: 'about', name: "new"});
@@ -29,6 +26,18 @@ app.get('/login', (req, res) => {
  app.get('/homepage', (req, res) => {
     res.render('homepage', { check: 'homepage', name: "new"});
     })
+
+    app.get('/chat', (req, res) => {
+        res.render('chat', { check: 'chat', name: "new"});
+        })
+
+        app.get('/search', (req, res) => {
+            const searchValue = req.query.search; 
+            const name = "new"; 
+            res.render('afterSearch', { search: searchValue, name: name });
+        });
+        
+        
 
 
 // Listen on Port 5000
