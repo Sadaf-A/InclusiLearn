@@ -2,7 +2,7 @@ const formidable = require('formidable');
 const registrationService = require('../services/RegistrationService');
 
 exports.getRegistrationForm = (req, res) => {
-  res.render('registration');
+  res.render('signup');
 };
 
 exports.registerUser =  (req, res) => {
