@@ -1,5 +1,4 @@
 const express = require('express');
-const formidable = require('formidable');
 const app = express();
 var server = require('http').Server(app);
 const port = 5000;
@@ -18,23 +17,28 @@ app.get('/about', (req, res) => {
    res.render('about', { text: 'about'});
 });
 
-app.get('/register', (req, res) => {
-    res.render('registration');
-});
+// Load and use your routes
+const registrationRoutes = require('./routes/registrationRoutes'); // Replace with your route file(s)
+app.use('/', registrationRoutes); // Mount your routes
 
-app.post('/register', (req, res) => { 
-   const form = new formidable.IncomingForm();   
-   form.parse(req, (err, fields, files) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).json({ error: 'Error parsing form data' });
-    }
 
-    // Access form fields in `fields` object
-    const { username, password } = fields;
+// app.get('/register', (req, res) => {
+//     res.render('registration');
+// });
 
-    res.json({ message: 'Form data received successfully', username, password });
-  });
-})
+// app.post('/register', (req, res) => { 
+//    const form = new formidable.IncomingForm();   
+//    form.parse(req, (err, fields, files) => {
+//     if (err) {
+//       console.error(err);
+//       return res.status(500).json({ error: 'Error parsing form data' });
+//     }
+
+//     // Access form fields in `fields` object
+//     const { username, password } = fields;
+
+//     res.json({ message: 'Form data received successfully', username, password });
+//   });
+// })
 
 server = app.listen(port);
