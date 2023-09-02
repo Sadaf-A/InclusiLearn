@@ -6,7 +6,7 @@ let profile = document.querySelector(".name-header");
 let search_header = document.querySelector(".option4-header");
 
 logo.addEventListener("click",function(){
-    window.location.href = "/"
+    window.location.href = "/homepage"
 })
 
 search_header.addEventListener("click",function(){
@@ -14,7 +14,7 @@ search_header.addEventListener("click",function(){
 })
 
 home.addEventListener("click",function(){
-    window.location.href = "/"
+    window.location.href = "/homepage"
     
 })
 
