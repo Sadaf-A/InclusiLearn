@@ -37,37 +37,44 @@ To get started with InclusiLearn, follow these simple steps:
    node app.js
    ```
 
-## How we built it
+## 💡 **How we built it** 💡
 
 We brought InclusiLearn to life through a combination of design, coding, and collaboration:
 
-- **Design**: We created wireframes and prototypes using Figma to visualize our application.
-- **Frontend**: We implemented the frontend using HTML, CSS, and JavaScript, and leveraged the Bootstrap Framework for a responsive and appealing design.
-- **Backend**: For the backend, we utilized MongoDB, Express, and eJS to create a seamless user experience.
+| Aspect        | Tools and Technologies Used                 |
+|---------------|--------------------------------------------|
+| Design        | Wireframes and prototypes in Figma         |
+| Frontend      | HTML, CSS, JavaScript, Bootstrap Framework |
+| Backend       | MongoDB, Express, eJS                      |
 
-## Challenges we ran into
+## 🚧 **Challenges we ran into** 🚧
 
 Throughout the development process, we encountered various challenges. These challenges pushed us to think creatively, problem-solve effectively, and grow as developers.
 
-## Accomplishments that we're proud of
+## 🏆 **Accomplishments that we're proud of** 🏆
 
 We're proud of achieving the following milestones:
 
-- Creating a user-friendly and visually appealing interface.
-- Building a strong and supportive community of users.
-- Addressing technical challenges and delivering a functional solution.
+| Milestone                                           | Description                                  |
+|-----------------------------------------------------|----------------------------------------------|
+| User-friendly and visually appealing interface.     | A design that enhances usability and aesthetics. |
+| Strong and supportive community of users.            | Fostering a welcoming and helpful environment. |
+| Addressing technical challenges and delivering a functional solution. | Overcoming hurdles to provide a working product. |
 
-## What we learned
+## 📚 **What we learned** 📚
 
 Developing InclusiLearn taught us valuable lessons in accessibility, user-centric design, and the importance of inclusivity in technology. We also improved our technical skills and teamwork.
 
-## What's next for InclusiLearn?
+## 🚀 **What's next for InclusiLearn?** 🚀
 
 InclusiLearn is continuously evolving. In the future, we plan to:
 
-- Enhance accessibility with ARIA roles.
-- Provide transcriptions for videos and audios for users with hearing disabilities.
-- Implement image descriptions for users with visual disabilities.
+| Future Plans                                       | Description                                |
+|-----------------------------------------------------|--------------------------------------------|
+| Enhance accessibility with ARIA roles.              | Ensuring the platform is usable for all.   |
+| Provide transcriptions for videos and audios for users with hearing disabilities. | Making content more accessible.     |
+| Implement image descriptions for users with visual disabilities. | Enhancing the experience for visually impaired users. |
+
 
 ## Developer's Corner: Crafting Connections and Code
 
