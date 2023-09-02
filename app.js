@@ -1,12 +1,8 @@
-// Imports
 const express = require('express');
-const bodyParser = require('body-parser');
+const formidable = require('formidable');
 const app = express();
+var server = require('http').Server(app);
 const port = 5000;
-
-// Use bodyParser middleware to parse form data
-app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(express.static('public'));
 
 // Set View's
@@ -26,11 +22,19 @@ app.get('/register', (req, res) => {
     res.render('registration');
 });
 
-app.post('/register', (req, res) => {
-    const { username, email, password } = req;
-  
-    res.send(`Registration successful for ${username}`);
+app.post('/register', (req, res) => { 
+   const form = new formidable.IncomingForm();   
+   form.parse(req, (err, fields, files) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ error: 'Error parsing form data' });
+    }
+
+    // Access form fields in `fields` object
+    const { username, password } = fields;
+
+    res.json({ message: 'Form data received successfully', username, password });
+  });
 })
 
-// Listen on Port 5000
-app.listen(port, () => console.info(`App listening on port ${port}`));
+server = app.listen(port);
