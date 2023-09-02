@@ -15,7 +15,7 @@ app.get('', (req, res) => {
 })
 
 app.get('/about', (req, res) => {
-   res.render('about', { text: 'about'});
+   res.render('about', { check: 'about', name: "new"});
 })
 
 // Listen on Port 5000
