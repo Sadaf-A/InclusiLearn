@@ -70,6 +70,10 @@ app.get('/profile', (req, res) => {
     res.render('profile', { check: 'profile', name: name});
 })
 
+app.get('/upload', (req, res) => {
+    res.render('upload', { name: "random"});
+})
+
 const registrationRoutes = require('./routes/registrationRoutes'); 
 app.use('/', registrationRoutes); 
 

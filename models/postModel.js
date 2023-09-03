@@ -1,25 +1,11 @@
 const mongoose = require("mongoose");
-const  dblink  = process.env.dblink;
 
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-
-mongoose
-    .connect(
-        dblink,
-        { useNewUrlParser: true, useUnifiedTopology: true }
-    )
-    .then((db) => {
-        console.log("Connected to db !!!");
-    });
-
-let postSchema = new mongoose.Schema({
+let uploadPostSchema = new mongoose.Schema({
     userId: {
         type: String,
         required: true
     },
-    src: {
+    title: {
         type: String,
         required: true,
         unique: true
@@ -32,9 +18,6 @@ let postSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    likes:{
-        type:Array 
-    },
     name:{
         type:String,
         required:true
@@ -42,7 +25,6 @@ let postSchema = new mongoose.Schema({
     MediaType:{
         type:String,
         required:true
-
     }
    
 })
