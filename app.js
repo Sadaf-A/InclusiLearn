@@ -4,7 +4,7 @@ const app = express();
 var server = require('http').Server(app);
 const bodyParser = require('body-parser');
 const port = 5000;
-
+const isLoggedIn = require('./middlewares/isLoggedIn');
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb+srv://sadaf20043006:1310Pota2@inclusilearn.wxnsdvc.mongodb.net/?retryWrites=true&w=majority', {
@@ -70,10 +70,6 @@ app.get('/profile', (req, res) => {
     res.render('profile', { check: 'profile', name: name});
 })
 
-app.get('/upload', (req, res) => {
-    res.render('upload', { name: "random"});
-})
-
 const registrationRoutes = require('./routes/registrationRoutes'); 
 app.use('/', registrationRoutes); 
 
@@ -81,6 +77,6 @@ const loginRoutes = require('./routes/loginRoutes');
 app.use('/', loginRoutes);
 
 const uploadRoutes = require('./routes/uploadPostRoutes');
-app.use('/', uploadRoutes);
+app.use('/', isLoggedIn, uploadRoutes);
 
 server = app.listen(port);
