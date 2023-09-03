@@ -1,4 +1,5 @@
-![mlh](https://github.com/Sadaf-A/InclusiLearn/assets/119059108/c5a52235-6e57-4e54-b30a-be2289080499)
+
+<img width="311" alt="mlh-logo-color" src="https://github.com/Sadaf-A/InclusiLearn/assets/119059108/9b7531de-17d3-43c3-a551-a17c7165e6c2">
 
 # 🌟 **InclusiLearn: Inclusive Learning Hub** 🌟
 
