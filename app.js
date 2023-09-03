@@ -1,7 +1,25 @@
 const express = require('express');
 const app = express();
 var server = require('http').Server(app);
+const session = require('express-session');
+const bodyParser = require('body-parser');
 const port = 5000;
+
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb+srv://sadaf20043006:1310Pota2@inclusilearn.wxnsdvc.mongodb.net/?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', () => {
+  console.log('Connected to MongoDB');
+});
+
+
 app.use(express.static('public'));
 
 app.set('views', './views');
