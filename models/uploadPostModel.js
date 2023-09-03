@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 let uploadPostSchema = new mongoose.Schema({
-    userId: {
-        type: String,
-        required: true
-    },
     title: {
         type: String,
         required: true,
@@ -18,18 +14,10 @@ let uploadPostSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    name:{
-        type:String,
-        required:true
+    createdAt: {
+        type: Date,
+        default: Date.now,
     },
-    MediaType:{
-        type:String,
-        required:true
-    }
-   
 })
 
-
-
-const postModel = mongoose.model("postCollection", postSchema);
-module.exports.postModel = postModel;
+module.exports = mongoose.model('chatUpload', uploadPostSchema);

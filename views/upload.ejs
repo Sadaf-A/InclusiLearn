@@ -59,28 +59,30 @@
                 </div>
             </div>
             <div class="part1">
-                <form action="" method="post">
+                <form action="/upload" method="POST">
                     <h1 class="heading">
                         SHARE
                     </h1>
                     <label for="name_story">Name your story:</label>
                     <div class="input1-story">
-                        <textarea name="YourStory" id="name_story"></textarea>
+                        <textarea name="title" id="name_story"></textarea>
                         <i class="fas fa-microphone mic1"></i>
                     </div>
                     <label for="challenge">What was your challenge?</label>
                     <div class="input2-challenge">
 
-                        <textarea name="Challenge" id="challenge"></textarea>
+                        <textarea name="challenge" id="challenge"></textarea>
                         <i class="fas fa-microphone mic2"></i>
                     </div>
                     <label for="solution">How did you solve it?</label>
                     <div class="input3-solution">
 
-                        <textarea name="Solution" id="solution"></textarea>
+                        <textarea name="solution" id="solution"></textarea>
                         <i class="fas fa-microphone mic3"></i>
                     </div>
-
+                    <div class="submitbtn">
+                        <input type="submit" value="submit">
+                    </div>
 
                 </form>
             </div>

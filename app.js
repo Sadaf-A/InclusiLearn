@@ -80,4 +80,7 @@ app.use('/', registrationRoutes);
 const loginRoutes = require('./routes/loginRoutes');
 app.use('/', loginRoutes);
 
+const uploadRoutes = require('./routes/uploadPostRoutes');
+app.use('/', uploadRoutes);
+
 server = app.listen(port);
