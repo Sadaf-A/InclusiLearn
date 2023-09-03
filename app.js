@@ -58,17 +58,13 @@ app.get('/search', (req, res) => {
 });
  
 app.get('/messageList', (req, res) => {
-    res.render('messageList', { check: 'messageList', name: "new"});
-})
-         
-app.get('/myPost', (req, res) => {
-    res.render('myPost', { check: 'myPost', name: "new"});
-})
+    res.render('messageList', { check: 'messageList', name: 'new'});
+});
  
 app.get('/profile', (req, res) => {
     const name = req.query.name;
     res.render('profile', { check: 'profile', name: name});
-})
+});
 
 const registrationRoutes = require('./routes/registrationRoutes'); 
 app.use('/', registrationRoutes); 
@@ -78,5 +74,8 @@ app.use('/', loginRoutes);
 
 const uploadRoutes = require('./routes/uploadPostRoutes');
 app.use('/', isLoggedIn, uploadRoutes);
+
+const myPostRoutes = require('./routes/myPostRoutes');
+app.use('/', isLoggedIn, myPostRoutes);
 
 server = app.listen(port);

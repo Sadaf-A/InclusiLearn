@@ -1,8 +1,10 @@
 const formidable = require('formidable');
 const UploadService = require('../services/UploadService');
+const UserService = require('../services/UserService');
 
 exports.getUploadForm = (req, res) => {
-  res.render('upload');
+  const name = UserService.getUsername(req.session.userId);
+  res.render('upload', { name: name });
 };
 
 exports.uploadPost = async (req, res) => {
