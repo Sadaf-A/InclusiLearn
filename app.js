@@ -1,7 +1,7 @@
 const express = require('express');
+const session = require('express-session');
 const app = express();
 var server = require('http').Server(app);
-const session = require('express-session');
 const bodyParser = require('body-parser');
 const port = 5000;
 
@@ -27,45 +27,52 @@ app.set('view engine', 'ejs');
 
 // Navigation
 
+app.use(
+    session({
+      secret: 'your-secret-key', // Replace with a strong secret key
+      resave: false,
+      saveUninitialized: false,
+    })
+  );
+
 app.get('/about', (req, res) => {
     res.render('about', { check: 'about', name: "new"});
  })
  
- app.get('/login', (req, res) => {
-     res.render('login', { check: 'login', name: "new"});
-  })
+// app.get('/login', (req, res) => {
+//     res.render('login', { check: 'login', name: "new"});
+// })
+
+app.get('/homepage', (req, res) => {
+    res.render('homepage', { check: 'homepage', name: "new"});
+})
  
-  app.get('/signup', (req, res) => {
-     res.render('signup', { check: 'signup', name: "new"});
-  })
+app.get('/chat', (req, res) => {
+    res.render('chat', { check: 'chat', name: "new"});
+})
  
-  app.get('/homepage', (req, res) => {
-     res.render('homepage', { check: 'homepage', name: "new"});
-     })
+app.get('/search', (req, res) => {
+    const searchValue = req.query.search; 
+    const name = "new"; 
+    res.render('afterSearch', { search: searchValue, name: name });
+});
  
-     app.get('/chat', (req, res) => {
-         res.render('chat', { check: 'chat', name: "new"});
-         })
- 
-         app.get('/search', (req, res) => {
-             const searchValue = req.query.search; 
-             const name = "new"; 
-             res.render('afterSearch', { search: searchValue, name: name });
-         });
- 
-         app.get('/messageList', (req, res) => {
-             res.render('messageList', { check: 'messageList', name: "new"});
-             })
+app.get('/messageList', (req, res) => {
+    res.render('messageList', { check: 'messageList', name: "new"});
+})
          
-             app.get('/myPost', (req, res) => {
-                 res.render('myPost', { check: 'myPost', name: "new"});
-                 })
+app.get('/myPost', (req, res) => {
+    res.render('myPost', { check: 'myPost', name: "new"});
+})
  
- app.get('/profile', (req, res) => {
-     res.render('profile', { check: 'profile', name: "new"});
-     })
+app.get('/profile', (req, res) => {
+    res.render('profile', { check: 'profile', name: "new"});
+})
 
 const registrationRoutes = require('./routes/registrationRoutes'); 
 app.use('/', registrationRoutes); 
+
+const loginRoutes = require('./routes/loginRoutes');
+app.use('/', loginRoutes);
 
 server = app.listen(port);

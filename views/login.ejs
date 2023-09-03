@@ -27,14 +27,16 @@
             <div class="down">Register to be able to share your content and connect with others.</div>
         </div>
         <div class="formpart">
-            <form action="">
+            <form action="/login" method="POST">
                 <label for="e-mail">Your e-mail</label>
-                <input class="up" type="email" name="" id="email" placeholder="Type your e-mail here">
+                <input class="up" type="email" name="email" id="email" placeholder="Type your e-mail here">
                 <label for="pass">Password</label>
-                <input class="up" type="password" name="" id="password" placeholder="Type your password here ">
+                <input class="up" type="password" name="password" id="password" placeholder="Type your password here ">
 
                 <div class="message"></div>
-                <div class="submitbtn">LOGIN</div>
+                <div class="submitbtn">
+                    <button type="submit" id="submit">Login</button>
+                </div>
 
                 <div class="signup">Don't have an account? <span>Sign Up</span> </div>
             </form>
