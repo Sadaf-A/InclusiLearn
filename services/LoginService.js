@@ -1,8 +1,8 @@
 const User = require('../models/UserModel');
 
-exports.loginUser = async (email, password) => {
+exports.loginUser = async (username, password) => {
     try {
-        const user = await User.findOne({ email });
+        const user = await User.findOne({ username });
         if (!user || user.password != password) {
             console.log('invalid creds');
         }

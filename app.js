@@ -66,7 +66,8 @@ app.get('/myPost', (req, res) => {
 })
  
 app.get('/profile', (req, res) => {
-    res.render('profile', { check: 'profile', name: "new"});
+    const name = req.query.name;
+    res.render('profile', { check: 'profile', name: name});
 })
 
 const registrationRoutes = require('./routes/registrationRoutes'); 

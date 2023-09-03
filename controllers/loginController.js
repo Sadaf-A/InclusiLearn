@@ -14,11 +14,11 @@ exports.loginUser = async (req, res) => {
        return res.status(500).json({ error: 'Error parsing form data' });
      }
  
-     const { email, password } = fields;
+     const { username, password } = fields;
 
-     console.log(email, password);
+     console.log(username, password);
      
-     const sessionId = await LoginService.loginUser(email[0], password[0]);
+     const sessionId = await LoginService.loginUser(username[0], password[0]);
 
      console.log(sessionId.toString());
 
@@ -26,7 +26,7 @@ exports.loginUser = async (req, res) => {
          req.session.userId = sessionId.toString();
      }
  
-     res.redirect('/homepage');
+     res.redirect(`/profile?name=${username}`);
    });
 }
 catch (err) {
