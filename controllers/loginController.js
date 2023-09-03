@@ -1,5 +1,5 @@
 const formidable = require('formidable');
-const LoginService = require('../services/loginService');
+const LoginService = require('../services/LoginService');
 
 exports.getLoginForm = (req, res) => {
   res.render('login');
