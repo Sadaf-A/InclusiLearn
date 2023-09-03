@@ -1,4 +1,7 @@
+![mlh](https://github.com/Sadaf-A/InclusiLearn/assets/119059108/c5a52235-6e57-4e54-b30a-be2289080499)
+
 # 🌟 **InclusiLearn: Inclusive Learning Hub** 🌟
+
 
 Welcome to InclusiLearn, where we're breaking down barriers and building bridges for students with disabilities. Our mission is to create a technologically inclusive solution that makes the lives of these students easier. 🌈✨
 
