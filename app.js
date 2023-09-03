@@ -49,6 +49,9 @@ app.get('/profile', (req, res) => {
     res.render('profile', { check: 'profile', name: "new"});
     })
         
+app.get('/upload', (req, res) => {
+    res.render('upload', { check: 'upload', name: "new"});
+    })
         
 
 
