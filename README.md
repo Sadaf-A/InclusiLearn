@@ -1,6 +1,3 @@
-
-<img width="311" alt="mlh-logo-color" src="https://github.com/Sadaf-A/InclusiLearn/assets/119059108/9b7531de-17d3-43c3-a551-a17c7165e6c2">
-
 # 🌟 **InclusiLearn: Inclusive Learning Hub** 🌟
 
 
@@ -79,9 +76,12 @@ InclusiLearn is continuously evolving. In the future, we plan to:
 | Provide transcriptions for videos and audios for users with hearing disabilities. | Making content more accessible.     |
 | Implement image descriptions for users with visual disabilities. | Enhancing the experience for visually impaired users. |
 
-
 ## Developer's Corner: Crafting Connections and Code
 
 Thank you for joining us on this journey to make education and learning inclusive for all. Together, we can create a world where every student has the opportunity to succeed. Happy coding and connecting! 💻🌟
 
 *InclusiLearn is more than just an application; it's a community of support and empowerment. We believe that inclusivity is the key to a brighter future, and we're excited to have you on board.*
+
+<div style="text-align: center;">
+    <img width="311" alt="mlh-logo-color" src="https://github.com/Sadaf-A/InclusiLearn/assets/119059108/9b7531de-17d3-43c3-a551-a17c7165e6c2">
+</div>
