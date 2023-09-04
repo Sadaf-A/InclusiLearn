@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 
 let uploadPostSchema = new mongoose.Schema({
+    userId: {
+        type: String,
+        required: true,
+        unique: true
+    },
     title: {
         type: String,
         required: true,

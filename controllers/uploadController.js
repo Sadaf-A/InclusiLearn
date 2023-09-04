@@ -19,8 +19,10 @@ exports.uploadPost = async (req, res) => {
      const { title, challenge, solution } = fields;
 
      console.log(title, challenge, solution);
+
+     const userId = req.session.userId;
      
-     await UploadService.uploadPost(title[0], challenge[0], solution[0]);
+     await UploadService.uploadPost(userId, title[0], challenge[0], solution[0]);
  
      res.send('your post was uploaded!');
    });

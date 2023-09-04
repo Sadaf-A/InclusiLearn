@@ -1,8 +1,9 @@
 const uploadPost = require('../models/uploadPostModel');
 
-exports.uploadPost = async (title, challenge, solution) => {
+exports.uploadPost = async (userId, title, challenge, solution) => {
     try {
         const newPost = new uploadPost({
+            userId,
             title,
             challenge,
             solution,

@@ -1,7 +1,8 @@
-const UserService = require('../services/UserService');
+const MyPostService = require('../services/MyPostService');
 
 exports.getmyPosts = async (req, res) => {
   console.log(req.session.userId);
-  const username = await UserService.getUsername(req.session.userId);
-  res.render('mypost', { check: 'myPost', name: username});
+  const userPosts = await MyPostService.getAllPosts(req.session.userId);
+  console.log(userPosts);
+  res.render('mypost', { userName: 'john doe', userPosts });
 };
