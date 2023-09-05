@@ -20,7 +20,7 @@
     <div class="page">
         <div class="container">
             <div class="form">
-                <form action="/upload" method="POST">
+                <form action="/upload" method="POST" enctype="multipart/form-data">
                     <h1 class="heading">
                         SHARE
                     </h1>
@@ -37,9 +37,9 @@
                         <textarea name="solution" id="solution" placeholder="Enter your solution"></textarea>
                     </div>
                     <label for="uploaded" class="uploaded">Upload Media</label>
-                    <input type="file" name="" id="uploaded">
+                    <input type="file" name="file" id="uploaded">
                     <div class="submit">
-                        <input type="submit" value="Share"
+                        <input type="submit" value="Share" 
                             style="    color: #fff;
                             background-color: #6B69E2;
                             font-weight: 600;
