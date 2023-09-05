@@ -1,4 +1,4 @@
-const uploadPost = require('../models/uploadPostModel');
+const uploadPost = require('../models/UploadPostModel');
 
 exports.uploadPost = async (userId, title, challenge, solution) => {
     try {

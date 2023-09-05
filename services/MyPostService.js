@@ -1,4 +1,4 @@
-const chatUpload = require('../models/uploadPostModel');
+const chatUpload = require('../models/UploadPostModel');
 
 exports.getAllPosts = async (userId) => {
     try {

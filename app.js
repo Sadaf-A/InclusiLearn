@@ -1,8 +1,9 @@
 const express = require('express');
 const session = require('express-session');
 const app = express();
-var server = require('http').Server(app);
-const bodyParser = require('body-parser');
+
+const { S3 } = require('./config/aws')
+
 const port = 5000;
 const isLoggedIn = require('./middlewares/isLoggedIn');
 const mongoose = require('mongoose');
@@ -78,4 +79,4 @@ app.use('/', isLoggedIn, uploadRoutes);
 const myPostRoutes = require('./routes/myPostRoutes');
 app.use('/', isLoggedIn, myPostRoutes);
 
-server = app.listen(port);
+app.listen(port);

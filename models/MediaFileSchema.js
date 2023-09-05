@@ -1,23 +1,19 @@
 const mongoose = require("mongoose");
 
-let uploadPostSchema = new mongoose.Schema({
-    userId: {
+let MediaFileSchema = new mongoose.Schema({
+    fileName: {
         type: String,
         required: true,
         unique: true
     },
-    title: {
+    fileType: {
         type: String,
         required: true,
         unique: true
     },
-    challenge: {
+    fileLocation: {
         type: String,
         required:true
-    },
-    solution: {
-        type: String,
-        required: true
     },
     createdAt: {
         type: Date,
@@ -25,4 +21,4 @@ let uploadPostSchema = new mongoose.Schema({
     },
 })
 
-module.exports = mongoose.model('chatUpload', uploadPostSchema);
+module.exports = mongoose.model('MediaUpload', MediaFileSchema);
