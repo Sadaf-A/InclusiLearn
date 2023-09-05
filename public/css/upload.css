@@ -53,11 +53,24 @@ textarea {
 }
 
 .uploaded {
-  color: #6B69E2;
+  color: #fff;
+  background-color: #6B69E2;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+.uploaded:hover {
+  background-color: #fff;
+  color: #6B69E2;
+  border: 1px solid #6B69E2;
+}
+
 
 #uploaded {
   display: none;
@@ -68,18 +81,20 @@ textarea {
   margin-top: 20px;
 }
 
-.submit input {
+.submit input[type="submit"] {
   background-color: #6B69E2;
-  color: white;
-  padding: 12px 24px;
-  border: none;
+  color: #fff;
+  padding: 10px 20px;
   border-radius: 15px;
-  font-size: 20px;
-  font-weight: 600;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.submit input:hover {
-  background-color: #A45AFF;
+
+.submit input[type="submit"]:hover {
+  background-color: #fff;
+  color: #6B69E2;
+  border: 1px solid #6B69E2;
 }
