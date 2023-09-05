@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Upload</title>
     <link rel="stylesheet" href="/css/upload.css">
     <link rel="stylesheet" href="/css/uploadMedia.css">
@@ -15,84 +14,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous"></script>
-
 </head>
 
 <body>
     <div class="page">
-
         <div class="container">
-            <div class="uploading">
-                <div class="anime">
-
-
-
-                    <div class="loader">
-                        <div>
-                            <div></div>
-                        </div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="percentage">67%</div>
-
-
-
-
-                </div>
-
-            </div>
-
-            <div class="popup">
-                <div class="content">
-                    <div class="cross">
-                        <i class="fas fa-times"></i>
-                    </div>
-
-                    <h1>Awesome <%- name %>!</h1>
-                    <img src="https://firebasestorage.googleapis.com/v0/b/sharablity.appspot.com/o/static%2Fconfetti%20(1).png?alt=media&token=6bee48ff-c483-4025-92b4-c6f4f31561e0"
-                        alt="" srcset="">
-                    <h2>Thanks for Sharing.</h2>
-                    <h3>Now people from InclusiLearn community can get inspired by you!</h3>
-
-                </div>
-            </div>
-            <div class="part1">
+            <div class="form">
                 <form action="/upload" method="POST">
                     <h1 class="heading">
                         SHARE
                     </h1>
                     <label for="name_story">Name your story:</label>
-                    <div class="input1-story">
-                        <textarea name="title" id="name_story"></textarea>
-                        <i class="fas fa-microphone mic1"></i>
+                    <div class="input-story">
+                        <textarea name="title" id="name_story" placeholder="Enter your story title"></textarea>
                     </div>
                     <label for="challenge">What was your challenge?</label>
-                    <div class="input2-challenge">
-
-                        <textarea name="challenge" id="challenge"></textarea>
-                        <i class="fas fa-microphone mic2"></i>
+                    <div class="input-challenge">
+                        <textarea name="challenge" id="challenge" placeholder="Enter your challenge"></textarea>
                     </div>
                     <label for="solution">How did you solve it?</label>
-                    <div class="input3-solution">
-
-                        <textarea name="solution" id="solution"></textarea>
-                        <i class="fas fa-microphone mic3"></i>
+                    <div class="input-solution">
+                        <textarea name="solution" id="solution" placeholder="Enter your solution"></textarea>
                     </div>
-                    <div class="submitbtn">
-                        <input type="submit" value="submit" style="background-color: purple; color: white; padding: 10px 20px; border-radius: 15px; border: none; cursor: pointer; font-size: 16px;">
-
-                    </div>
-
-                </form>
-            </div>
-            <div class="part2">
-                <div class="media">
                     <label for="uploaded" class="uploaded">Upload Media</label>
-                    <input type="file" name="" id="uploaded" style="display: none;">
-                </div>
-                <div class="submit">Share</div>
+                    <input type="file" name="" id="uploaded">
+                    <div class="submit">
+                        <input type="submit" value="Share"
+                            style="background-color: purple; color: white; padding: 10px 20px; border-radius: 15px; border: none; cursor: pointer; font-size: 16px;">
+                    </div>
+                </form>
             </div>
         </div>
     </div>

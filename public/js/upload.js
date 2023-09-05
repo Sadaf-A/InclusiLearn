@@ -7,18 +7,15 @@ let percentage = document.querySelector(".percentage");
 let mediaUploaded = document.querySelector("#uploaded");
 let submit = document.querySelector(".submit");
 let link = "";
-let image = document.querySelector(".image");
-let mediabox = document.querySelector(".media");
+let mediaPreview = document.querySelector(".media-preview");
 
-window.addEventListener("load",function(){
-    submit.addEventListener("click",share);
+window.addEventListener("load", function () {
+    submit.addEventListener("click", share);
     mediaUploaded.addEventListener("change", uploadMedia);
-
-
 });
 
-function share(){
-    if(mediaUploaded.files[0] && storyName.value && challenge.value && solution.value ){
+function share() {
+    if (mediaUploaded.files[0] && storyName.value && challenge.value && solution.value) {
         uploading.style.display = "flex";
         let obj = {};
         let time = Date.now();
@@ -41,23 +38,22 @@ function share(){
                     obj.solution = solution.value;
                     obj.MediaType = mediaUploaded.files[0].type;
 
-                    await axios.post("http://43.205.212.198:5000/upload",obj);
-                   uploading.style.display = "none";
-                   popup.style.display = "flex";
-                   setTimeout(function(){
-                       window.location.href = "/";
-                       
-                   },3000);
+                    await axios.post("http://43.205.212.198:5000/upload", obj);
+                    uploading.style.display = "none";
+                    popup.style.display = "flex";
+                    setTimeout(function () {
+                        window.location.href = "/";
+                    }, 3000);
                 })
             });
-        
+
     }
 }
 
 function uploadMedia() {
     let reader = new FileReader();
-    if (document.querySelector(".media div")) {
-        document.querySelector(".media div").remove();
+    if (mediaPreview.querySelector("div")) {
+        mediaPreview.querySelector("div").remove();
     }
     reader.onload = function (e) {
         let type = mediaUploaded.files[0].type.split("/")[0];
@@ -66,11 +62,9 @@ function uploadMedia() {
             let img = document.createElement("img");
             img.setAttribute("src", e.target.result);
             img.classList.add("image");
-            wrap.appendChild(img)
-            mediabox.prepend(wrap);
-
+            wrap.appendChild(img);
+            mediaPreview.prepend(wrap);
         } else if (type == "video") {
-
             let video = document.createElement("video");
             let src = document.createElement("source");
 
@@ -78,12 +72,11 @@ function uploadMedia() {
             src.setAttribute("type", mediaUploaded.files[0].type);
             src.classList.add("image");
             video.classList.add("image");
-            video.controls = true
-            video.appendChild(src)
+            video.controls = true;
+            video.appendChild(src);
             wrap.appendChild(video);
-            mediabox.prepend(wrap);
+            mediaPreview.prepend(wrap);
         } else if (type == "audio") {
-
             let audio = document.createElement("audio");
             let src = document.createElement("source");
 
@@ -91,18 +84,11 @@ function uploadMedia() {
             src.setAttribute("type", mediaUploaded.files[0].type);
             src.classList.add("image");
             audio.classList.add("image");
-            audio.controls = true
-            audio.appendChild(src)
-            wrap.appendChild(audio)
-            mediabox.prepend(wrap);
+            audio.controls = true;
+            audio.appendChild(src);
+            wrap.appendChild(audio);
+            mediaPreview.prepend(wrap);
         }
-      
     };
     reader.readAsDataURL(mediaUploaded.files[0]);
-
-
 }
-
-
-
-
