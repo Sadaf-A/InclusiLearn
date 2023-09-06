@@ -2,6 +2,6 @@ const MyPostService = require('../services/MyPostService');
 exports.getmyPosts = async (req, res) => {
   const userPosts = await MyPostService.getAllPosts(req.session.userId);
   const preSignedUrls = await MyPostService.generatePreSignedUrls(userPosts);
-  console.log(preSignedUrls);
+  console.log(preSignedUrls[0].preSignedUrl);
   res.render('mypost', { userName: 'john doe', userPosts, preSignedUrls });
 };
