@@ -1,8 +1,27 @@
 const express = require('express');
 const session = require('express-session');
-const app = express();
+const http = require('http');
+const socketIo = require('socket.io');
 
-const { S3 } = require('./config/aws')
+const app = express();
+const server = http.createServer(app);
+const io = socketIo(server);
+
+// Handle WebSocket connections
+io.on('connection', (socket) => {
+  console.log('A user connected');
+
+  // Handle incoming messages
+  socket.on('chat message', (message) => {
+    // Broadcast the message to all connected clients
+    io.emit('chat message', message);
+  });
+
+  // Handle disconnections
+  socket.on('disconnect', () => {
+    console.log('A user disconnected');
+  });
+});
 
 const port = 5000;
 const isLoggedIn = require('./middlewares/isLoggedIn');
@@ -79,4 +98,6 @@ app.use('/', isLoggedIn, uploadRoutes);
 const myPostRoutes = require('./routes/myPostRoutes');
 app.use('/', isLoggedIn, myPostRoutes);
 
-app.listen(port);
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+})
