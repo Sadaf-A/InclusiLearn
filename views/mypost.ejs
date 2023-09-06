@@ -35,6 +35,11 @@
             <h1 class="heading">
                 <!-- <i class="fas fa-arrow-left back"></i> -->
                 My Posts</h1>
+                <% for (let i = 0; i < userPosts.length; i++) { %>
+                    <img src="<%= preSignedUrls[i] %>" alt="S3 Image" />
+                <% } %>
+
+                <img src="https://media-files-inclusi-learn.s3.ap-south-1.amazonaws.com/istockphoto-1300081015-1024x1024.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA6PTYI33LNFF4VXGD%2F20230906%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20230906T063343Z&X-Amz-Expires=3600&X-Amz-Signature=4e0be8c453771e6f70a131f366753fd86cb79fcb4e8cd42534245ef768da7d4d&X-Amz-SignedHeaders=host" />
             
                 <div class="others">
                     <div class="container">
@@ -45,8 +50,8 @@
                                         <i class="fas fa-times"></i>
                                     </div>
         
+                                    <img src=<%= preSignedUrls[i] %> alt="S3 Image" />
                                     <div class="upper">
-                                    <img src="<%= userPosts[i].presignedUrl %>" alt="S3 Image" />
                                         <h1><%= userPosts[i].title %></h1>
                                         <h3>Shared By: <%= userPosts[i].author %></h3>
                                     </div>

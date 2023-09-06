@@ -17,8 +17,6 @@ exports.uploadPost = async (req, res) => {
        console.error(err);
        return res.status(500).json({ error: 'Error parsing form data' });
      }
-
-     console.log(files);
  
      const file = files.file[0];
      const fileName = file.originalFilename;
@@ -31,17 +29,11 @@ exports.uploadPost = async (req, res) => {
       Body: fileData,
      };
 
-     await S3.upload(params, (s3Err, data) =>  {
-      if (err) {
-        console.error('Error uploading file:', err);
-      } else {
-        const objectKey = data.Key;
-      }
-    })
+     const data = await S3.upload(params).promise();
+
+     const objectKey = data.Key;
 
      const { title, challenge, solution } = fields;
-
-     console.log(title, challenge, solution);
 
      const userId = req.session.userId;
      
