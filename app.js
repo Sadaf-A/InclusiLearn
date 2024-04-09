@@ -27,7 +27,7 @@ const port = 5000;
 const isLoggedIn = require('./middlewares/isLoggedIn');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://sadaf20043006:1310Pota2@inclusilearn.wxnsdvc.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect('', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
